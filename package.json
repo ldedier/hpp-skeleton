@@ -1,0 +1,109 @@
+{
+	"name": "hpp-skeleton",
+	"displayName": "Automated Hpp Skeleton",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "ldedier",
+	"engines": {
+		"vscode": "^1.27.2"
+	},
+	"categories": [
+		"Programming Languages", "Language Packs"
+	],
+	"activationEvents": [
+		"onLanguage:cpp"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "extension.showTime",
+				"title": "showTime"
+			}
+		],
+		"configuration": {
+			"title": "Hpp class skeleton configuration",
+			"properties": {
+				"hpp-skeleton.ReplacementPlaceHolder": {
+					"type": "string",
+					"default": "** replace parameters **",
+					"scope": "window",
+					"description": "The string your editor will find and select at the end of the skeleton computation."
+				},
+				"hpp-skeleton.publicMethods": {
+					"type": "array",
+					"default": [
+						"$CLASSNAME(void)",
+						"$CLASSNAME($PLACEHOLDER)",
+						"$CLASSNAME($CLASSNAME const &instance)",
+						"$CLASSNAME &operator=($CLASSNAME const &rhs)",
+						"~$CLASSNAME(void)"
+					],
+					"scope": "window",
+					"description": "Custom public methods to add to the skeleton. Use $CLASSNAME as a reference to the class and $PLACEHOLDER as a reference to the selection."
+				},
+				"hpp-skeleton.privateMethods": {
+					"title": "private Methods",
+					"type": "array",
+					"default": [],
+					"scope": "window",
+					"description": "Custom private methods to add to the skeleton. Use $CLASSNAME as a reference to the class and $PLACEHOLDER as a reference to the selection."
+				},
+				"hpp-skeleton.functions": {
+					"title": "Out of class function definitions",
+					"type": "array",
+					"default": [],
+					"scope": "window",
+					"description": "Custom functions to add to the skeleton. Use $CLASSNAME as a reference to the class and $PLACEHOLDER as a reference to the selection."
+				},
+				"hpp-skeleton.includes": {
+					"title": "Includes",
+					"type": "array",
+					"default": [],
+					"scope": "window",
+					"description": "Includes to add to the skeleton. (\"example.hpp\", <example2>)"
+				},
+				"hpp-skeleton.headerCommandId": {
+					"title": "Header command ID",
+					"type": "string",
+					"scope": "window",
+					"description": "The id of the command to execute at the creation of the skeleton (example: 42header.insertHeader). CAREFUL: this will actually EXECUTE the command and unknown commands will result in no skeleton creations!"
+				},
+				"hpp-skeleton.headerCommandShouldExecute": {
+					"markdownDescription": "Execute Header command",
+					"type": "boolean",
+					"default": false,
+					"scope": "window",
+					"description": "Controls wether or not the skeleton executes the 'headerCommandId' at the start of the skeleton creation."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.36.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.0.0-next.0"
+	},
+	"dependencies": {
+		"@types/escape-string-regexp": "^2.0.1",
+		"escape-string-regexp": "^2.0.0"
+	}
+}
