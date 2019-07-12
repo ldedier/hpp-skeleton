@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HppClassFiller.ts                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/10 07:37:22 by ldedier           #+#    #+#             */
+/*   Updated: 2019/07/12 05:38:04 by ldedier          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 import * as vscode from 'vscode';
 
 class HppClassFiller
@@ -57,7 +69,6 @@ class HppClassFiller
 		this.privateMethodsPrototypes = this.translateHPPExtension(HppClassFiller.getPrivateMethods());	
 		this.functionsPrototypes = this.translateHPPExtension(HppClassFiller.getFunctions());
 		this.includes = this.translateHPPExtension(HppClassFiller.getIncludes());
-		console.log("THIS", this);
 		// "std::ostream &operator<<(std::ostream &o, " + this.className + " const &instance);"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 06:09:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/07/10 06:32:20 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/07/12 05:38:42 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ import HppClassFiller from './HppClassFiller';
 class HppWatcher
 {
 	public fileSystemWatcher : vscode.FileSystemWatcher;
-	public shouldExecute: boolean;
 	public command: string;
 
 	constructor()
@@ -26,27 +25,19 @@ class HppWatcher
 		this.fileSystemWatcher =
 			vscode.workspace.createFileSystemWatcher("**/[A-Z]{[A-Z],[a-z]}*.hpp", false, true, true);
 		this.fileSystemWatcher.onDidCreate(this.onCreateHpp);
-		this.shouldExecute = vscode.workspace.getConfiguration().get('hpp-skeleton.headerCommandShouldExecute') as boolean;
-		this.command = vscode.workspace.getConfiguration().get('hpp-skeleton.headerCommandId') as string;
+		this.command = (vscode.workspace.getConfiguration().get('hpp-skeleton.headerCommandId') as string).trim();
 	}
 
 	private selectPostCreation(editor: vscode.TextEditor, filler: HppClassFiller)
 	{
 		const text = editor.document.getText();
 		const regex = RegExp(escapeRegExp(filler.placeHolder), 'g');
-		let i: number;
-		
-		i = 0;
-		while (regex.test(text))
+		if (regex.test(text))
 		{
 			const selection = new vscode.Selection(
 				editor.document.positionAt(regex.lastIndex - filler.placeHolder.length),
 					 editor.document.positionAt(regex.lastIndex));
-			if (i++ == 0)
-				editor.selection = selection;
-			else
-				editor.selections.push(selection);
-			console.log('sel', editor.selections);
+			editor.selection = selection;
 		}
 	}
 
@@ -69,6 +60,7 @@ class HppWatcher
 					filler.privateMethodsPrototypes.map(s => "\t\t" + s + ";").join("\n") + ((filler.privateMethodsPrototypes.length > 0) ? "\n" : ""),
 					"};" + ((filler.functionsPrototypes.length > 0) ? "\n" : ""),
 					filler.functionsPrototypes.map(func => func + ";").join("\n"),
+					"#endif"
 				].join("\n"));
 		}).then(() => {
 			this.selectPostCreation(editor, filler);
@@ -76,12 +68,11 @@ class HppWatcher
 	}
 
 	private onCreateHpp = (uri: vscode.Uri) => {
-		console.log(this);
 		if (vscode.window.activeTextEditor
 			&& vscode.window.activeTextEditor.document.uri.path == uri.path)
 		{
 			let editor = vscode.window.activeTextEditor as vscode.TextEditor;
-			if (this.shouldExecute && this.command)
+			if (this.command && this.command.length > 0)
 			{
 				vscode.commands.executeCommand(this.command).then(() => {
 					vscode.window.showTextDocument(editor.document, 1, false).then(() => {

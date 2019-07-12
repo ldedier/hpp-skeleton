@@ -1,9 +1,14 @@
 {
 	"name": "hpp-skeleton",
-	"displayName": "Automated Hpp Skeleton",
-	"description": "",
+	"displayName": "hpp skeleton",
+	"description": "Automated Hpp Skeleton at file creation",
 	"version": "0.0.1",
 	"publisher": "ldedier",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ldedier/hpp-skeleton"
+	  },
 	"engines": {
 		"vscode": "^1.27.2"
 	},
@@ -15,16 +20,6 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
-			},
-			{
-				"command": "extension.showTime",
-				"title": "showTime"
-			}
-		],
 		"configuration": {
 			"title": "Hpp class skeleton configuration",
 			"properties": {
@@ -32,7 +27,7 @@
 					"type": "string",
 					"default": "** replace parameters **",
 					"scope": "window",
-					"description": "The string your editor will find and select at the end of the skeleton computation."
+					"description": "The string your editor will find and select at the end of the skeleton computation. This should occurs 0 or 1 time in the whole skeleton."
 				},
 				"hpp-skeleton.publicMethods": {
 					"type": "array",
@@ -71,14 +66,7 @@
 					"title": "Header command ID",
 					"type": "string",
 					"scope": "window",
-					"description": "The id of the command to execute at the creation of the skeleton (example: 42header.insertHeader). CAREFUL: this will actually EXECUTE the command and unknown commands will result in no skeleton creations!"
-				},
-				"hpp-skeleton.headerCommandShouldExecute": {
-					"markdownDescription": "Execute Header command",
-					"type": "boolean",
-					"default": false,
-					"scope": "window",
-					"description": "Controls wether or not the skeleton executes the 'headerCommandId' at the start of the skeleton creation."
+					"description": "The id of the command to execute at the creation of the skeleton (example: 42header.insertHeader). CAREFUL: this will actually EXECUTE the command and unknown commands will result in no skeleton creations! Leave it to blank for no command to execute"
 				}
 			}
 		}
