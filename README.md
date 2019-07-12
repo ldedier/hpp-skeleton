@@ -31,16 +31,16 @@ You should use these 2 special strings when editing these properties:
 * **$CLASSNAME** : resolves into the _.hpp_ class name (Sample for Sample.hpp)
 * **$PLACEHOLDER** : resolves into the value of _hpp-skeleton.ReplacementPlaceHolder_
 
-#### example
-The init configuration will provide these public methods:
+#### example:
 ```ts
+"hpp-skeleton.includes": ["<iostream>", \"example.hpp\""],
 "hpp-skeleton.publicMethods": [
     "$CLASSNAME(void)",
     "$CLASSNAME($PLACEHOLDER)",
     "$CLASSNAME($CLASSNAME const &instance)",
     "$CLASSNAME &operator=($CLASSNAME const &rhs)",
     "~$CLASSNAME(void)"
-]
+],
 "hpp-replacementPlaceHolder": "** replace parameters **"
 ```
 
