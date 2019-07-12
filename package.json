@@ -5,7 +5,7 @@
 	"version": "0.0.1",
 	"publisher": "ldedier",
 	"license": "MIT",
-	"image": "./images/hpp-skeleton.png",
+	"icon": "./images/hpp-skeleton.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ldedier/hpp-skeleton"

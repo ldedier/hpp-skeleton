@@ -3,6 +3,8 @@
 
 Automatic creation of class skeletons at _.hpp_ files creation.
 
+![oops something went wrong, try to check on https://raw.githubusercontent.com/ldedier/hpp-skeleton/master/images/hppGif.gif](https://raw.githubusercontent.com/ldedier/hpp-skeleton/master/images/hppGif.gif)
+
 ## Extension Settings
 
 ### Configurations

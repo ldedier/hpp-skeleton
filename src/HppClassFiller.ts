@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 07:37:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/07/12 08:58:48 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/07/12 09:22:59 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ class HppClassFiller
 		this.privateMethodsPrototypes = this.translateHPPExtension(HppClassFiller.getPrivateMethods());	
 		this.functionsPrototypes = this.translateHPPExtension(HppClassFiller.getFunctions());
 		this.includes = this.translateHPPExtension(HppClassFiller.getIncludes());
-		// "std::ostream &operator<<(std::ostream &o, " + this.className + " const &instance);"
 	}
 }
 export default HppClassFiller;
