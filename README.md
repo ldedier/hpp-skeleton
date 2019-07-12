@@ -36,7 +36,7 @@ You should use these 2 special strings when editing these properties:
 
 #### example:
 ```ts
-"hpp-skeleton.includes": ["<iostream>", \"example.hpp\""],
+"hpp-skeleton.includes": ["<iostream>", "\"example.hpp\""],
 "hpp-skeleton.publicMethods": [
     "$CLASSNAME(void)",
     "$CLASSNAME($PLACEHOLDER)",
