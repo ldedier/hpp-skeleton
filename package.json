@@ -2,7 +2,7 @@
 	"name": "hpp-skeleton",
 	"displayName": "hpp skeleton",
 	"description": "Automated Hpp Skeleton at file creation",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"publisher": "ldedier",
 	"license": "MIT",
 	"icon": "./images/hpp-skeleton.png",
@@ -14,7 +14,8 @@
 		"vscode": "^1.27.2"
 	},
 	"categories": [
-		"Programming Languages", "Language Packs"
+		"Programming Languages",
+		"Language Packs"
 	],
 	"activationEvents": [
 		"onLanguage:cpp"
