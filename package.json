@@ -2,7 +2,7 @@
 	"name": "hpp-skeleton",
 	"displayName": "hpp skeleton",
 	"description": "Automated Hpp Skeleton at file creation",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"publisher": "ldedier",
 	"license": "MIT",
 	"icon": "images/hpp-skeleton.png",
