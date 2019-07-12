@@ -23,13 +23,13 @@ You can configure your .hpp skeleton by specifying in the extension settings:
   "hpp-skeleton.privateMethods": array,
   "hpp-skeleton.functions": array,
   "hpp-skeleton.headerCommandId": string,
-  "hpp-skeleton.replacementPlaceHolder": string,
+  "hpp-skeleton.placeHolder": string,
 }
 ```
 #### Special strings:
 You should use these 2 special strings when editing these properties:
 * **$CLASSNAME** : resolves into the _.hpp_ class name (Sample for Sample.hpp)
-* **$PLACEHOLDER** : resolves into the value of _hpp-skeleton.ReplacementPlaceHolder_
+* **$PLACEHOLDER** : resolves into the value of _hpp-skeleton.placeHolder
 
 #### example:
 ```ts
@@ -41,7 +41,7 @@ You should use these 2 special strings when editing these properties:
     "$CLASSNAME &operator=($CLASSNAME const &rhs)",
     "~$CLASSNAME(void)"
 ],
-"hpp-replacementPlaceHolder": "** replace parameters **"
+"hpp-skeleton.placeHolder": "** replace parameters **"
 ```
 
 License

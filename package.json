@@ -24,7 +24,7 @@
 		"configuration": {
 			"title": "Hpp class skeleton configuration",
 			"properties": {
-				"hpp-skeleton.replacementPlaceHolder": {
+				"hpp-skeleton.placeHolder": {
 					"type": "string",
 					"default": "** replace parameters **",
 					"scope": "window",
