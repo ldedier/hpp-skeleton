@@ -5,10 +5,11 @@
 	"version": "0.0.1",
 	"publisher": "ldedier",
 	"license": "MIT",
+	"image": "./images/hpp-skeleton.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ldedier/hpp-skeleton"
-	  },
+	},
 	"engines": {
 		"vscode": "^1.27.2"
 	},
@@ -23,7 +24,7 @@
 		"configuration": {
 			"title": "Hpp class skeleton configuration",
 			"properties": {
-				"hpp-skeleton.ReplacementPlaceHolder": {
+				"hpp-skeleton.replacementPlaceHolder": {
 					"type": "string",
 					"default": "** replace parameters **",
 					"scope": "window",
@@ -83,7 +84,7 @@
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.6",
 		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.36.0",
+		"@types/vscode": "^1.27.2",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
