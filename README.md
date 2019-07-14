@@ -1,7 +1,7 @@
 # hpp-skeleton
 ## Features
 
-Automatic creation of class skeletons at _.hpp_ files creation.
+#### Automatic creation of class skeletons at _.hpp_ files creation.
 **the file has to start with an upper-case letter, making it a class .hpp file**
 
 ![oops something went wrong, try to check on https://raw.githubusercontent.com/ldedier/hpp-skeleton/master/images/hppGif.gif](https://raw.githubusercontent.com/ldedier/hpp-skeleton/master/images/hppGif.gif)
