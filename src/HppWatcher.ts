@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 06:09:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/07/12 05:38:42 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/01 04:56:05 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ class HppWatcher
 
 	private onCreateHpp = (uri: vscode.Uri) => {
 		if (vscode.window.activeTextEditor
-			&& vscode.window.activeTextEditor.document.uri.path == uri.path)
+			&& vscode.window.activeTextEditor.document.uri.path == uri.path
+				&& vscode.window.activeTextEditor.document.getText().length == 0)
 		{
 			let editor = vscode.window.activeTextEditor as vscode.TextEditor;
 			if (this.command && this.command.length > 0)
