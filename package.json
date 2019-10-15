@@ -2,7 +2,7 @@
 	"name": "hpp-skeleton",
 	"displayName": "hpp skeleton",
 	"description": "Automated Hpp Skeleton at file creation",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"publisher": "ldedier",
 	"license": "MIT",
 	"icon": "images/hpp-skeleton.png",
@@ -23,7 +23,7 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
-			"title": "Hpp class skeleton configuration",
+			"title": "Hpp skeleton",
 			"properties": {
 				"hpp-skeleton.placeHolder": {
 					"type": "string",
